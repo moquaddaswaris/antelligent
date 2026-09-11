@@ -1,69 +1,215 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen bg-background text-foreground">
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 border-b border-border bg-background/90 px-8 py-5 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <h1 className="text-2xl font-bold tracking-tight">
+            Antelligent
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <div className="flex gap-8 text-sm text-secondary">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#home"
+              className="transition-colors hover:text-foreground"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Home
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#about"
+              className="transition-colors hover:text-foreground"
             >
-              Learning
-            </a>{" "}
-            center.
+              About
+            </a>
+            <a
+              href="#system"
+              className="transition-colors hover:text-foreground"
+            >
+              System
+            </a>
+            <a
+              href="#contact"
+              className="transition-colors hover:text-foreground"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section
+        id="home"
+        className="flex min-h-[82vh] items-center justify-center px-6"
+      >
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-6 inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm text-secondary shadow-sm">
+            Autonomous Swarm Intelligence
+          </div>
+
+          <h2 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+            Antelligent
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-secondary">
+            Intelligent Swarm Drone System for autonomous coordination,
+            communication, and mission execution.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="#system"
+              className="rounded-xl bg-primary px-6 py-3 font-medium text-white transition hover:opacity-90"
+            >
+              Explore System
+            </a>
+
+            <a
+              href="#about"
+              className="rounded-xl border border-border bg-surface px-6 py-3 font-medium text-foreground transition hover:bg-surface-muted"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="border-t border-border px-8 py-24"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-3xl">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+              About
+            </p>
+
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Built for intelligent coordination
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-secondary">
+              Antelligent is a swarm drone platform designed to enable
+              multiple autonomous drones to work together as a coordinated
+              system. The platform focuses on communication, task
+              allocation, telemetry, and autonomous mission execution.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* System */}
+      <section
+        id="system"
+        className="border-t border-border bg-surface-muted px-8 py-24"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+              Architecture
+            </p>
+
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              The Antelligent System
+            </h2>
+
+            <p className="mt-5 text-secondary">
+              A distributed architecture connecting mission control,
+              swarm intelligence, and autonomous aerial agents.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {/* Card 1 */}
+            <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-primary">
+                01
+              </div>
+
+              <h3 className="text-xl font-semibold">
+                Ground Control
+              </h3>
+
+              <p className="mt-3 leading-7 text-secondary">
+                Manage missions, configure objectives, and monitor the
+                complete swarm from a centralized control interface.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-primary">
+                02
+              </div>
+
+              <h3 className="text-xl font-semibold">
+                Swarm Manager
+              </h3>
+
+              <p className="mt-3 leading-7 text-secondary">
+                Coordinate communication, distribute tasks, and maintain
+                intelligent decision-making across the swarm.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-primary">
+                03
+              </div>
+
+              <h3 className="text-xl font-semibold">
+                Autonomous Drones
+              </h3>
+
+              <p className="mt-3 leading-7 text-secondary">
+                Execute assigned missions, exchange telemetry, and
+                operate collaboratively with other members of the swarm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section
+        id="contact"
+        className="border-t border-border px-8 py-24"
+      >
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+            Contact
+          </p>
+
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Autonomous intelligence, working together.
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-secondary">
+            Antelligent brings together intelligent coordination,
+            autonomous systems, and swarm robotics into one platform.
+          </p>
+
+          <a
+            href="mailto:contact@antelligent.com"
+            className="mt-8 inline-block rounded-xl bg-primary px-6 py-3 font-medium text-white transition hover:opacity-90"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border px-8 py-7">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 text-sm text-secondary sm:flex-row">
+          <p>© 2026 Antelligent. All rights reserved.</p>
+
+          <p>
+            Autonomous Swarm Intelligence
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
